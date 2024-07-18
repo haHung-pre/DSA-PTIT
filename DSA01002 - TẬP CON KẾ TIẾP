@@ -16,16 +16,16 @@ void sinh(){
 			a[j]=a[j-1]+1;
 		}
 	}
-}
+		for(int i=1;i<=k;i++){
+			cout<<a[i]<<" ";
+		}	
+	}  
 int main(){
 	int t;cin>>t;
 	while(t--){
 		cin>>n>>k;
-		for(int i=1;i<=k;i++) cin>>a[i];
+		for(int i=1;i<=k;i++)cin>>a[i];
 		sinh();
-		for(int i=1;i<=k;i++){
-			cout<<a[i]<<" ";
-		}
 		cout<<endl;
 	}
 }
