@@ -27,10 +27,11 @@ int main(){
         c++;
         bool check=true;
             for(int i=1;i<=k;i++){
-                if(a[i]!=x[i]) check=false;
+                if(a[i]!=x[i]) check=false;break;
             }
             if(check){
-                cout<<c; 
+                cout<<c<<endl;
+                return 0;
             }
         sinh();
     }
