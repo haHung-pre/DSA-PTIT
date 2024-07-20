@@ -39,11 +39,12 @@ int main(){
         for(int j=0;j<k;j++){
             if(v[i][j]!=x[j+1]){
                 check=false;
-               
+                break;
             }
         }
         if(check){
             cout<<c<<endl;
+            return 0;
         }
     }
 }
