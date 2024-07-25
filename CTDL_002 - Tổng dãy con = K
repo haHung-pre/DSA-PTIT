@@ -36,7 +36,6 @@ void out(){
 int main(){
    cin>>n>>k;
    ktao();
-   final=0;
    while(final==0){
       if(check()){
          out();
