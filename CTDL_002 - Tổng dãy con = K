@@ -19,7 +19,7 @@ void sinh(){
 bool check(){
    int sum=0;
    for(int i=1;i<=n;i++){
-      if(x[i]){
+      if(x[i]==1){
          sum+=a[i];
       }
    }
@@ -27,7 +27,7 @@ bool check(){
 }
 void out(){
    for(int i=1;i<=n;i++){
-      if(x[i]){
+      if(x[i]==1){
          cout<<a[i]<<" ";
       }
    }
