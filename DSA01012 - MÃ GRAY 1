@@ -1,28 +1,25 @@
 #include<iostream>
-#include<algorithm>
+#include<vector>
+#define pb push_back
 using namespace std;
 int main(){
-	int t;cin>>t;
+    int t;cin>>t;
     while(t--){
-		int t;cin>>t;
-		string s;cin>>s;
-		int x[s.length()],n=s.length();
-		for(int i = 0; i < n; i++)x[i]=s[i] -'0';
-		n--;
-		int i=n-1;
-		while(i>=0&&x[i]>=x[i+1])i--;
-		cout<<t<<' ';
-		if(i<0)cout<<"BIGGEST\n";
-		else{
-			int k=n;
-			while(x[i]>=x[k]&&k>0)k--;
-			swap(x[i],x[k]);
-			int l=i+1,r=n;
-			while(l<r)
-				swap(x[l++],x[r--]);
-			for(int i=0;i<=n;i++)
-				cout<<x[i];
-			cout<<endl;
-		}
+        int n;cin>>n;
+        vector<string>l1,l2;
+        l1.pb("0");l1.pb("1");
+        l2.pb("1");l2.pb("0");
+        for(int i=1;i<=n-1;i++){
+            for(string &x:l1)x ="0"+x;
+            for(string &x:l2){
+                x="1"+x;
+                l1.pb(x);
+            }
+            l2.clear();
+            for(int i=l1.size()-1;i>=0;i--)
+	    l2.pb(l1[i]);
+        }
+        for(string x:l1)cout<<x<<" ";
+        cout<<endl;
     }
 }
