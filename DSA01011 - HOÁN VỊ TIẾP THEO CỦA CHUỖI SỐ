@@ -1,4 +1,4 @@
-#include<iostream>
+C1:#include<iostream>
 #include<algorithm>
 using namespace std;
 int main(){
@@ -24,5 +24,30 @@ int main(){
 				cout<<x[i];
 			cout<<endl;
 		}
+   }
+}
+C2:#include<bits/stdc++.h>
+using namespace std;
+void sinh(string s){
+   int i=s.size()-2;
+   while(i>=0&&s[i]>=s[i+1]){
+      i--;
+   }
+   if(i==-1){
+      cout<<"BIGGEST\n";
+   }else{
+      int j=s.size()-1;
+     while(s[i]>=s[j])j--;
+      swap(s[i],s[j]);
+      reverse(s.begin()+i+1,s.end());
+      cout<<s<<endl;
+   }
+}
+int main(){
+   int t;cin>>t;
+   while(t--){
+      int tt;string s;cin>>tt>>s;
+      cout<<tt<<" ";
+      sinh(s);
    }
 }
