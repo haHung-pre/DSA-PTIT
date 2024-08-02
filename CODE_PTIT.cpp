@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+int n, a[100], visited[100];
+
+void in()
+{
+   for (int i = 1; i <= n; i++)
+   {
+      cout << a[i];
+   }
+}
+void Try(int i)
+{
+   // gán các giá trị có có thể cho bit thứ i
+   for (int j = 1; j <= n; j++)
+   {
+      // kiểm tra xem có thể gán giá  trị j cho x[i]
+      if (visited[j] == 0)
+      {
+         a[i] = j;
+         visited[j] = 1;
+         if (i == n)
+         {
+            in();
+            cout << endl;
+         }
+         else
+         {
+            Try(i + 1);
+            // bo ghi nhan
+         }
+         visited[j] = 0;
+      }
+   }
+}
+int main()
+{
+   cin >> n;
+   Try(1);
+}
