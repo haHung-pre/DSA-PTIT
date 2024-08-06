@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+C1:#include <bits/stdc++.h>
 using namespace std;
 int n, k, s, c = 0, x[500];
 void ql(int i, int bd, int sum)
@@ -15,6 +15,31 @@ void ql(int i, int bd, int sum)
       {
          ql(i + 1, j + 1, sum + j);
       }
+   }
+}
+int main()
+{
+   cin >> n >> k >> s;
+   ql(1, 1, 0);
+   cout << c;
+}
+C2:#include <bits/stdc++.h>
+using namespace std;
+int n, k, s, c = 0, x[500];
+void ql(int i, int bd, int sum)
+{
+   if (i == k + 1)
+   {
+      if (sum == s)
+      {
+         c++;
+         return;
+      }
+   }
+   for (int j = bd; j <= n; j++)
+   {
+      x[i] = j;
+      ql(i + 1, j + 1, sum + j);
    }
 }
 int main()
