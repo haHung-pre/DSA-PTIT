@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+C2:#include <bits/stdc++.h>
 using namespace std;
 
 int n, s, c = 0, a[500], x[500], res = 1e9;
