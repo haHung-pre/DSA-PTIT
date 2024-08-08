@@ -230,3 +230,101 @@ int main()
    }
    return 0;
 }
+
+
+
+
+c4:#include <bits/stdc++.h>
+using namespace std;
+
+int N;
+int maze[10][10];
+vector<string> results;
+
+struct State
+{
+   int x, y;
+   string path;
+   vector<vector<bool>> visited;
+};
+
+void iterativeDFS()
+{
+   stack<State> s;
+   vector<vector<bool>> initialVisited(N, vector<bool>(N, false));
+
+   if (maze[0][0] == 1)
+   {
+      s.push({0, 0, "", initialVisited});
+   }
+
+   while (!s.empty())
+   {
+      State current = s.top();
+      s.pop();
+
+      int x = current.x;
+      int y = current.y;
+      string path = current.path;
+      vector<vector<bool>> visited = current.visited;
+
+      // If reached the bottom-right corner
+      if (x == N - 1 && y == N - 1)
+      {
+         results.push_back(path);
+         continue;
+      }
+
+      // Move Down
+      if (x + 1 < N && maze[x + 1][y] == 1 && !visited[x + 1][y])
+      {
+         visited[x + 1][y] = true;
+         s.push({x + 1, y, path + "D", visited});
+      }
+
+      // Move Right
+      if (y + 1 < N && maze[x][y + 1] == 1 && !visited[x][y + 1])
+      {
+         visited[x][y + 1] = true;
+         s.push({x, y + 1, path + "R", visited});
+      }
+   }
+}
+
+int main()
+{
+   int T;
+   cin >> T;
+   while (T--)
+   {
+      cin >> N;
+      results.clear();
+
+      for (int i = 0; i < N; ++i)
+      {
+         for (int j = 0; j < N; ++j)
+         {
+            cin >> maze[i][j];
+         }
+      }
+
+      iterativeDFS();
+
+      // Sort results lexicographically
+      sort(results.begin(), results.end());
+
+      if (results.empty())
+      {
+         cout << -1 << endl;
+      }
+      else
+      {
+         for (const string &path : results)
+         {
+            cout << path << " ";
+         }
+         cout << endl;
+      }
+   }
+   return 0;
+}
