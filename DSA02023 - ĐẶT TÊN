@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+C1:#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -41,4 +41,50 @@ int main()
    n = c;
 
    ql(1, 1);
+}
+C2:#include <bits/stdc++.h>
+using namespace std;
+
+int n, k;
+vector<string> ten;
+
+void ql(vector<string> s, int bd)
+{
+   if (s.size() == k)
+   {
+      for (int i = 0; i < k; i++)
+      {
+         cout << s[i];
+         if (i < k - 1)
+            cout << " ";
+      }
+      cout << endl;
+      return;
+   }
+
+   for (int i = bd; i <= n - (k - s.size()); i++)
+   {
+      s.push_back(ten[i]);
+      ql(s, i + 1);
+      s.pop_back();
+   }
+}
+
+int main()
+{
+   cin >> n >> k;
+   set<string> st;
+   for (int i = 0; i < n; i++)
+   {
+      string name;
+      cin >> name;
+      st.insert(name);
+   }
+
+   ten.assign(st.begin(), st.end());
+   n = ten.size(); // Update n to the number of unique names
+   sort(ten.begin(), ten.end());
+
+   vector<string> s;
+   ql(s, 0);
 }
