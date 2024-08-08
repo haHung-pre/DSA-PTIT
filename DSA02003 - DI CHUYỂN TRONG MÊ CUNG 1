@@ -133,10 +133,15 @@ int main()
       else
       {
          sort(paths.begin(), paths.end());
-         for (const string &path : paths)
+         for (size_t i = 0; i < paths.size(); ++i)
          {
-            cout << path << endl;
+            if (i > 0)
+            {
+               cout << " ";
+            }
+            cout << paths[i];
          }
+         cout << endl;
       }
    }
    return 0;
