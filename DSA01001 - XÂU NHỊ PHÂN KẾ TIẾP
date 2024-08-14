@@ -18,7 +18,15 @@ int main(){
 		ql(x,x.size()-1);
 		cout<<x<<endl;
 	}
-}#include<bits/stdc++.h>
+}
+
+
+
+
+
+
+
+C2:#include<bits/stdc++.h>
 using namespace std;
 void check(string s){
 	cin>>s;
