@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+C1:#include<bits/stdc++.h>
 using namespace std;
 void ql(vector<int>&tmp,int k,int bd,vector<int>&v,vector<vector<int>>&res) {
     if(v.size()==k) {
@@ -30,3 +30,4 @@ int main() {
     }
 }
 
+C2:
