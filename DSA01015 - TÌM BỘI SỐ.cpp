@@ -25,7 +25,7 @@ C2:#include<bits/stdc++.h>
 using namespace std;
 void check(){
    int n;cin>>n;
-   queue<string> q;
+   queue<string>q;
    q.push("9");
    while(true){
       string s=q.front();
