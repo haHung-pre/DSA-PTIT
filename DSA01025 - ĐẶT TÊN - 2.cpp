@@ -39,44 +39,32 @@ int main(){
         }
     }
 }
-C2:#include <bits/stdc++.h>
+C2:#include<bits/stdc++.h>
 using namespace std;
-
-int n, k;
-vector<char> letters;
-
-void ql(vector<char> &s, int bd)
-{
-   if (s.size() == k)
-   {
-      for (char c : s)
-         cout << c;
-      cout << endl;
+int n,k;
+vector<char>letters;
+void ql(vector<char> &s,int bd){
+   if(s.size()==k){
+      for(char c:s)
+         cout<<c;
+      cout<<endl;
       return;
    }
-
-   for (int i = bd; i < n; ++i)
-   {
+   for(int i=bd;i<n;i++){
       s.push_back(letters[i]);
-      ql(s, i + 1);
+      ql(s,i+1);
       s.pop_back();
    }
 }
-
-int main()
-{
-   int t;
-   cin >> t;
-   while (t--)
-   {
-      cin >> n >> k;
+int main(){
+   int t;cin>>t;
+   while(t--){
+      cin>>n>>k;
       letters.clear();
-      for (int i = 0; i < n; ++i)
-      {
-         letters.push_back('A' + i);
+      for (int i = 0;i<n;i++){
+         letters.push_back('A'+i);
       }
-      vector<char> s;
-      ql(s, 0);
+      vector<char>s;
+      ql(s,0);
    }
-   return 0;
 }
