@@ -43,7 +43,7 @@ C2:#include<bits/stdc++.h>
 using namespace std;
 int n,k;
 vector<char>letters;
-void ql(vector<char> &s,int bd){
+void ql(vector<char>&s,int bd){
    if(s.size()==k){
       for(char c:s)
          cout<<c;
@@ -61,7 +61,7 @@ int main(){
    while(t--){
       cin>>n>>k;
       letters.clear();
-      for (int i = 0;i<n;i++){
+      for (int i=0;i<n;i++){
          letters.push_back('A'+i);
       }
       vector<char>s;
