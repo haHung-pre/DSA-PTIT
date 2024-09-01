@@ -18,7 +18,26 @@ int main(){
 
 
 
-C2:#include<iostream>
+C2:#include<bits/stdc++.h>
+using namespace std;
+int main() {
+	int t;cin>>t;
+	while(t--){
+		string s;
+		cin>>s;
+		s="0"+s;
+		for(int i=1;i<s.length();i++) {
+			if(s[i-1]=='1') {
+				cout<<'1'-s[i];
+			}
+			else cout<<s[i];
+		}
+		cout<<endl;
+	}
+}
+
+
+C3:#include<iostream>
 #include<vector>
 #define pb push_back
 using namespace std;
