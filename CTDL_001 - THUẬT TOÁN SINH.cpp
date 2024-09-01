@@ -1,40 +1,4 @@
-C1:#include<bits/stdc++.h>
-using namespace std;
-int n,x[100],ok=0;
-void ql(int i){
-	for(int j=0;j<=1;j++){
-		x[i]=j;
-	if(i==n){
-		ok=1;
-		for(int k=1;k<=n;k++){
-			if(x[n-k+1]!=x[k]){
-				ok=0;
-				break;
-			}
-		}
-		if(ok){
-		for(int i=1;i<=n;i++){
-			cout<<x[i]<<" ";
-		}
-		cout<<endl;
-	}
-	} 
-	else ql(i+1);
-}
-}
-int main(){
-	cin>>n;
-	ql(1);
-}
-
-
-
-
-
-
-
-
-C2:#include<iostream>
+C1:#include<iostream>
 using namespace std;
 int n,a[1005],final=0;
 void ktao(){
@@ -78,4 +42,36 @@ int main(){
       }
       sinh();
    }
+}
+
+
+
+
+C2:#include<bits/stdc++.h>
+using namespace std;
+int n,x[100],ok=0;
+void ql(int i){
+	for(int j=0;j<=1;j++){
+		x[i]=j;
+	if(i==n){
+		ok=1;
+		for(int k=1;k<=n;k++){
+			if(x[n-k+1]!=x[k]){
+				ok=0;
+				break;
+			}
+		}
+		if(ok){
+		for(int i=1;i<=n;i++){
+			cout<<x[i]<<" ";
+		}
+		cout<<endl;
+	}
+	} 
+	else ql(i+1);
+}
+}
+int main(){
+	cin>>n;
+	ql(1);
 }
