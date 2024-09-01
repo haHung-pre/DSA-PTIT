@@ -39,6 +39,10 @@ int main(){
         }
     }
 }
+
+
+
+
 C2:#include<bits/stdc++.h>
 using namespace std;
 int n,k;
