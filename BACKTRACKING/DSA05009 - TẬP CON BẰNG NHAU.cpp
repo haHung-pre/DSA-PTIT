@@ -9,6 +9,7 @@ void ql(int i,int bd,int sum){
          x[i]=a[j];
          if(sum+a[j]==s){
             ok=1;
+            //return; 
          }
          else
             ql(i+1,j+1,sum+a[j]);
@@ -27,7 +28,7 @@ int main(){
       }
       if(s%2==1){
          cout<<"NO\n";
-         return 0;
+         continue;
       }
       s/=2;
       sort(a+1,a+n+1);
