@@ -15,7 +15,7 @@ int main(){
 			q.pop();
 			int s2=q.top();
 			q.pop();
-			int k=(s1 + s2)%mod;
+			int k=(s1+s2)%mod;
 			s=(s+k)%mod;
 			q.push(k);
 		}
