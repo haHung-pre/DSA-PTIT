@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+C1:#include <bits/stdc++.h>
 using namespace std;
 long long mod=1e9+7,F[2][2],M[2][2];
 void Mul(long long f[2][2],long long m[2][2]){
@@ -33,5 +33,52 @@ int main(){
         long long n;
         cin>>n;
         cout<<fibo(n)<<endl;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+C2:#include<bits/stdc++.h>
+using namespace std;
+const int MOD =1000000007;
+#define ll long long
+struct Matrix{
+    ll f[2][2]={
+        {1,1},
+        {1,0}
+    };
+};
+Matrix operator*(Matrix A,Matrix B){
+    Matrix C;
+    for(int i=0;i<2;i++){
+        for(int j=0;j<2;j++){
+            C.f[i][j]=0;
+            for(int l=0;l<2;l++){
+            C.f[i][j]=(C.f[i][j]+A.f[i][l]% MOD*B.f[l][j]% MOD)%MOD;
+            }
+        }
+    }
+    return C;
+}
+Matrix Pow(Matrix A,int k){
+    if(k==1)return A;
+    Matrix tmp=Pow(A, k/2);
+    if (k%2==0)return tmp*tmp;
+    else return tmp*tmp*A;
+}
+int main(){
+    int t;cin>>t;
+    while(t--){
+        int n;cin>>n;
+        Matrix A;
+        Matrix res=Pow(A,n);
+        cout<<res.f[1][0]<<endl;
     }
 }
