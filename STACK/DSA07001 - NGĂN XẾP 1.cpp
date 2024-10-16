@@ -1,32 +1,28 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    stack<int>st;
-    int n;
+    int t=1;
+	while(t--){
+    int x;
     string s;
+    vector<int>v;
     while(cin>>s){
-        if(s=="pop"&&!st.empty()){
-            st.pop();
-        }else if(s=="push"){
-            cin>>n;
-            st.push(n);
-        }else{
-            if(st.empty()){
-                cout<<"empty"<<endl;
-            }else{
-                stack<int>tmp;
-                while(!st.empty()){
-                    tmp.push(st.top());
-                    st.pop();
-                }
-                while(!tmp.empty()) {
-                    cout<<tmp.top()<<' ';
-                    st.push(tmp.top());
-                    tmp.pop();
-                }
-                cout<<endl;
+        if(s=="push"){
+            cin>>x;
+            v.push_back(x);
+        }
+        else if(s=="pop"){
+            if(!v.empty()){
+                v.pop_back();
             }
         }
+        else if(s=="show"){
+            if(v.empty())
+                cout<<"empty";
+            else
+                for(int i:v)cout<<i<<" ";
+            cout<<endl;
+        }
     }
+	}
 }
-
