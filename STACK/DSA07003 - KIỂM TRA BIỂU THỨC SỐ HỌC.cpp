@@ -4,7 +4,7 @@ bool check(string &s){
     stack<char>st;
     for(char c:s){
         if(c>='a'&&c<='z')continue;
-        if(c != ')')st.push(c);
+        if(c!=')')st.push(c);
         else{
             if(st.empty()||st.top()=='(')
                 return 0;
