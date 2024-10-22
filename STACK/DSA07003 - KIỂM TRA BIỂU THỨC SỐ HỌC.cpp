@@ -17,10 +17,10 @@ bool check(string &s){
     return 1;
 }
 int main(){
-    int t; cin>>t;
+    int t;cin>>t;
     cin.ignore();
     while(t--){
-        string s;getline(cin, s);
+        string s;getline(cin,s);
         if(check(s))cout<<"No\n";
         else cout<<"Yes\n";
     }
