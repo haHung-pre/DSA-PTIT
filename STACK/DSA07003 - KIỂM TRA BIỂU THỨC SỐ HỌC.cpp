@@ -10,8 +10,6 @@ bool check(string &s){
                 return 1;
             while(st.size()&&st.top()!='(')
                 st.pop();
-            if(st.empty())return 1;
-            st.pop();
         }
     }
     return 0;
