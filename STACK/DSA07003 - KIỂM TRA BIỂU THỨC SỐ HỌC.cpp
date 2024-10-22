@@ -7,21 +7,21 @@ bool check(string &s){
         if(c!=')')st.push(c);
         else{
             if(st.empty()||st.top()=='(')
-                return 0;
+                return 1;
             while(st.size()&&st.top()!='(')
                 st.pop();
-            if(st.empty())return 0;
+            if(st.empty())return 1;
             st.pop();
         }
     }
-    return 1;
+    return 0;
 }
 int main(){
     int t;cin>>t;
-    cin.ignore();
+    scanf("\n");
     while(t--){
         string s;getline(cin,s);
-        if(check(s))cout<<"No\n";
-        else cout<<"Yes\n";
+        if(check(s))cout<<"Yes\n";
+        else cout<<"No\n";
     }
 }
