@@ -9,7 +9,7 @@ int main(){
             cin>>a[i];
         stack<int>st;
         for(int i=n-1;i>=0;i--){
-            while(!st.empty()&&a[st.top()]<= a[i])
+            while(!st.empty()&&a[st.top()]<=a[i])
                 st.pop();
             if(st.empty()) 
                 b[i]=-1;
