@@ -23,7 +23,7 @@ int main(){
       for(int i=1;i<=n;i++){
          cin>>a[i];
       }
-      sort(a+1,a+n+1);
+      sort(a+1,a+n+1,greater<int>());
       res=1e9;
       ql(1,1,0);
       if(res==1e9)
